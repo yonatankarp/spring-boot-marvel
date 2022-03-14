@@ -1,4 +1,4 @@
-package com.yonatankarp.springbootapptemplate
+package com.yonatankarp.marvel
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

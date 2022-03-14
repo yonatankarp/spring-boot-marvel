@@ -45,9 +45,9 @@ jobs:
         with:
           filters: |
             source_code:
-              - 'spring-boot-app-template/src/**'
-              - 'spring-boot-app-template/Dockerfile'
-              - 'spring-boot-app-template/build.gradle'
+              - 'spring-boot-marvel/src/**'
+              - 'spring-boot-marvel/Dockerfile'
+              - 'spring-boot-marvel/build.gradle'
               - 'build.gradle'
 
       - name: Cache Gradle packages
