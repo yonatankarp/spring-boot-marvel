@@ -1,0 +1,121 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2022 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+  "etag": "f09847059d85fe1ffd88ed7c95e140559593fc9a",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 1560,
+    "count": 20,
+    "results": [
+      {
+        "id": 22506,
+        "digitalId": 10949,
+        "title": "Avengers: The Initiative (2007) #19",
+        "issueNumber": 19,
+        "variantDescription": "",
+        "description": "",
+        "modified": "2015-10-27T16:38:23-0400",
+        "isbn": "",
+        "upc": "5960606084-01911",
+        "diamondCode": "SEP082362",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 32,
+        "textObjects": [
+          {
+            "type": "issue_preview_text",
+            "language": "en-us",
+            "text": "Join 3-D MAN, CLOUD 9, KOMODO, HARDBALL, and heroes around America in the battle that will decide the fate of the planet and the future of the Initiative program. Will the Kill Krew Army win the day?"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/22506",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/characters/1011334/3-d_man?utm_campaign=apiRef&utm_source=1885c34d3263b37ab5104ee97fd397e3"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/1945",
+          "name": "Avengers: The Initiative (2007 - 2010)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "2008-12-17T00:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 2.99
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 9,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/22506/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/2133",
+              "name": "Tom Brevoort",
+              "role": "editor"
+            }
+          ],
+          "returned": 9
+        },
+        "characters": {
+          "available": 9,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/22506/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010802",
+              "name": "Ant-Man (Eric O'Grady)"
+            }
+          ],
+          "returned": 9
+        },
+        "stories": {
+          "available": 21,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011334/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/19947",
+              "name": "Cover #19947",
+              "type": "cover"
+            }
+          ],
+          "returned": 20
+        },
+        "events": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011334/events",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/269",
+              "name": "Secret Invasion"
+            }
+          ],
+          "returned": 1
+        }
+      }
+    ]
+  }
+}

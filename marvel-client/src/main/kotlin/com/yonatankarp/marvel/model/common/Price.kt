@@ -1,6 +1,5 @@
 package com.yonatankarp.marvel.model.common
 
-import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
@@ -13,15 +12,11 @@ data class Price(
      * The type of the price.
      */
     @JsonProperty("type")
-    var type: String,
+    var type: String? = null,
 
     /**
      * The amount
      */
     @JsonProperty("price")
-    var price: Int
-) {
-    @Suppress("unused")
-    @JsonCreator
-    internal constructor() : this("", 0)
-}
+    var price: Double? = null,
+)
