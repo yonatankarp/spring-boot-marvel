@@ -1,8 +1,7 @@
-@file:Suppress("unused", "MemberVisibilityCanBePrivate")
+@file:Suppress("MemberVisibilityCanBePrivate")
 
 package com.yonatankarp.marvel.model
 
-import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
@@ -16,9 +15,25 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param name the name of the entity
  */
 sealed class BaseSummary(
-    val resourceUri: String,
-    val name: String
-)
+    val resourceUri: String?,
+    val name: String?,
+) {
+    override fun toString(): String =
+        "${this.javaClass.name.split('.').last()}(resourceUri=$resourceUri, name=$name)"
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+        other as BaseSummary
+        return resourceUri == other.resourceUri && name == other.name
+    }
+
+    override fun hashCode(): Int {
+        var result = resourceUri.hashCode()
+        result = 31 * result + name.hashCode()
+        return result
+    }
+}
 
 /**
  * A Comics summary includes reference to the comics entity and the comics name.
@@ -28,28 +43,50 @@ sealed class BaseSummary(
  */
 class ComicsSummary(
     @JsonProperty("resourceURI")
-    resourceUri: String,
+    resourceUri: String? = null,
 
     @JsonProperty("name")
-    name: String
-) : BaseSummary(resourceUri, name) {
-    @JsonCreator
-    internal constructor() : this("", "")
-}
+    name: String? = null,
+) : BaseSummary(resourceUri, name)
 
 /**
  * A Series summary includes reference to the series entity and the series name.
  */
 class SeriesSummary(
     @JsonProperty("resourceURI")
-    resourceUri: String,
+    resourceUri: String? = null,
 
     @JsonProperty("name")
-    name: String
-) : BaseSummary(resourceUri, name) {
-    @JsonCreator
-    internal constructor() : this("", "")
-}
+    name: String? = null,
+) : BaseSummary(resourceUri, name)
+
+/**
+ * An Event summary includes reference to the event entity and the event name.
+ *
+ * @param resourceUri url reference to consume the full event entity
+ * @param name the name of the event
+ */
+class EventSummary(
+    @JsonProperty("resourceURI")
+    resourceUri: String? = null,
+
+    @JsonProperty("name")
+    name: String? = null,
+) : BaseSummary(resourceUri, name)
+
+/**
+ * A Character summary includes reference to the character entity and the character name.
+ *
+ * @param resourceUri url reference to consume the full character entity
+ * @param name the name of the character
+ */
+class CharacterSummary(
+    @JsonProperty("resourceURI")
+    resourceUri: String? = null,
+
+    @JsonProperty("name")
+    name: String? = null,
+) : BaseSummary(resourceUri, name)
 
 /**
  * A Story summary includes reference to the story entity, type, and the story
@@ -61,33 +98,28 @@ class SeriesSummary(
  */
 class StorySummary(
     @JsonProperty("resourceURI")
-    resourceUri: String,
+    resourceUri: String? = null,
 
     @JsonProperty("name")
-    name: String,
+    name: String? = null,
 
     @JsonProperty("type")
-    val type: String
+    val type: String? = null,
 ) : BaseSummary(resourceUri, name) {
-    @JsonCreator
-    internal constructor() : this("", "", "")
-}
 
-/**
- * An Event summary includes reference to the event entity and the event name.
- *
- * @param resourceUri url reference to consume the full event entity
- * @param name the name of the event
- */
-class EventSummary(
-    @JsonProperty("resourceURI")
-    resourceUri: String,
+    override fun toString(): String = "StorySummary(resourceUri=$resourceUri, name=$name, type=$type)"
 
-    @JsonProperty("name")
-    name: String
-) : BaseSummary(resourceUri, name) {
-    @JsonCreator
-    internal constructor() : this("", "")
+    override fun equals(other: Any?): Boolean {
+        if (!super.equals(other)) return false
+        other as StorySummary
+        return type == other.type
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + type.hashCode()
+        return result
+    }
 }
 
 /**
@@ -100,31 +132,26 @@ class EventSummary(
  */
 class CreatorSummary(
     @JsonProperty("resourceURI")
-    resourceUri: String,
+    resourceUri: String? = null,
 
     @JsonProperty("name")
-    name: String,
+    name: String? = null,
 
     @JsonProperty("role")
-    val role: String
+    val role: String? = null,
 ) : BaseSummary(resourceUri, name) {
-    @JsonCreator
-    internal constructor() : this("", "", "")
-}
 
-/**
- * A Character summary includes reference to the character entity and the character name.
- *
- * @param resourceUri url reference to consume the full character entity
- * @param name the name of the character
- */
-class CharacterSummary(
-    @JsonProperty("resourceURI")
-    resourceUri: String,
+    override fun toString(): String = "CreatorSummary(resourceUri=$resourceUri, name=$name, role=$role)"
 
-    @JsonProperty("name")
-    name: String
-) : BaseSummary(resourceUri, name) {
-    @JsonCreator
-    internal constructor() : this("", "")
+    override fun equals(other: Any?): Boolean {
+        if (!super.equals(other)) return false
+        other as CreatorSummary
+        return role == other.role
+    }
+
+    override fun hashCode(): Int {
+        var result = super.hashCode()
+        result = 31 * result + role.hashCode()
+        return result
+    }
 }

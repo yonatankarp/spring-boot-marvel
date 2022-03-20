@@ -1,6 +1,5 @@
 package com.yonatankarp.marvel.model.common
 
-import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
@@ -16,15 +15,11 @@ data class Url(
      * A text identifier for the URL.
      */
     @JsonProperty("type")
-    var type: String,
+    var type: String? = null,
 
     /**
      * 	A full URL (including scheme, domain, and path).
      */
     @JsonProperty("url")
-    var url: String
-) {
-    @Suppress("unused")
-    @JsonCreator
-    internal constructor() : this("", "")
-}
+    var url: String? = null,
+)

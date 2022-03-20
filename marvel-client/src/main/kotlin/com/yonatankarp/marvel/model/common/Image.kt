@@ -1,6 +1,5 @@
 package com.yonatankarp.marvel.model.common
 
-import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
@@ -14,14 +13,11 @@ data class Image(
      * The directory path of to the image.
      */
     @JsonProperty("path")
-    var path: String,
+    var path: String? = null,
 
     /**
      * The file extension for the image.
      */
     @JsonProperty("extension")
-    var extension: String
-) {
-    @JsonCreator
-    internal constructor() : this("", "")
-}
+    var extension: String? = null,
+)
