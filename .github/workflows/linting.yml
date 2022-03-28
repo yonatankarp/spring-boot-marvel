@@ -35,9 +35,13 @@ jobs:
         with:
           filters: |
             source_code:
-              - 'spring-boot-marvel/src/**'
-              - 'spring-boot-marvel/Dockerfile'
-              - 'spring-boot-marvel/build.gradle'
+              - 'marvel-client/src/**'
+              - 'marvel-client/build.gradle'
+              - 'marvel-data/src/**'
+              - 'marvel-data/build.gradle'
+              - 'marvel-web/src/**'
+              - 'marvel-web/build.gradle'
+              - 'Dockerfile'
               - 'build.gradle'
             docs:
               - README.md

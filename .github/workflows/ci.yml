@@ -45,9 +45,13 @@ jobs:
         with:
           filters: |
             source_code:
-              - 'spring-boot-marvel/src/**'
-              - 'spring-boot-marvel/Dockerfile'
-              - 'spring-boot-marvel/build.gradle'
+              - 'marvel-client/src/**'
+              - 'marvel-client/build.gradle'
+              - 'marvel-data/src/**'
+              - 'marvel-data/build.gradle'
+              - 'marvel-web/src/**'
+              - 'marvel-web/build.gradle'
+              - 'Dockerfile'
               - 'build.gradle'
 
       - name: Cache Gradle packages
@@ -66,7 +70,7 @@ jobs:
         id: tests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew assemble test
+        run: ./gradlew build
 
       - name: Cleanup Gradle Cache
         # Remove some files from the Gradle cache, so they aren't cached by
