@@ -6,7 +6,13 @@ import java.time.OffsetDateTime
 /**
  * @author yonatankarp
  */
-interface ComicsTestData : TextObjectTestData, UrlTestData, SeriesTestData, DateTestData, PriceTestData, ImageTestData,
+interface ComicsTestData :
+    TextObjectTestData,
+    UrlTestData,
+    SeriesTestData,
+    DateTestData,
+    PriceTestData,
+    ImageTestData,
     ResourceListTestData {
     val defaultComics: Comics
         get() = Comics(

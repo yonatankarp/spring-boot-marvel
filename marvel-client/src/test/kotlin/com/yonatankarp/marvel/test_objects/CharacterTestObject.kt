@@ -6,7 +6,12 @@ import java.time.OffsetDateTime
 /**
  * @author yonatankarp
  */
-interface CharacterTestObject : ImageTestData, ComicsTestData, SeriesTestData, StoryTestData, EventTestData,
+interface CharacterTestObject :
+    ImageTestData,
+    ComicsTestData,
+    SeriesTestData,
+    StoryTestData,
+    EventTestData,
     ResourceListTestData,
     UrlTestData {
     val defaultCharacter: Character

@@ -3,9 +3,9 @@ package com.yonatankarp.marvel.services
 import com.yonatankarp.marvel.model.Character
 import com.yonatankarp.marvel.model.Comics
 import com.yonatankarp.marvel.model.Event
-import com.yonatankarp.marvel.model.common.MarvelResponse
 import com.yonatankarp.marvel.model.Series
 import com.yonatankarp.marvel.model.Story
+import com.yonatankarp.marvel.model.common.MarvelResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

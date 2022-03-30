@@ -4,8 +4,8 @@ import com.yonatankarp.marvel.model.common.Price
 
 interface PriceTestData {
     val defaultPrice: Price
-    get() = Price(
-        "printPrice",
-        2.99,
-    )
+        get() = Price(
+            "printPrice",
+            2.99,
+        )
 }

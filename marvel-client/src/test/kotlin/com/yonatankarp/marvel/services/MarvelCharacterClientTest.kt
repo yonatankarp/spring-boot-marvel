@@ -144,7 +144,6 @@ class MarvelCharacterClientTest {
             "/v1/public/characters/$CHARACTER_ID/stories"
         )
 
-
     private fun <T> testWithCharacterIdAndDefaultOffsetAndLimit(
         endpoint: (Long, Long, String, String) -> Call<MarvelResponse<T>>,
         characterId: Long,
