@@ -49,7 +49,7 @@ interface MarvelResponseTestObject : ResponseWrapperTestObject {
             ETAG,
             defaultEventResponseWrapper
         )
-    
+
     companion object {
         private const val STATUS_CODE = 200
         private const val STATUS_VALUE = "Ok"
@@ -57,6 +57,5 @@ interface MarvelResponseTestObject : ResponseWrapperTestObject {
         private const val ATTRIBUTE_TEXT = "Data provided by Marvel. © 2022 MARVEL"
         private const val ATTRIBUTE_HTML = "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>"
         private const val ETAG = "f09847059d85fe1ffd88ed7c95e140559593fc9a"
-        
     }
 }

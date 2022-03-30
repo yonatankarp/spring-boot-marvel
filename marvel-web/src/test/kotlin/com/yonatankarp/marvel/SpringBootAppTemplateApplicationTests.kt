@@ -8,6 +8,6 @@ class SpringBootAppTemplateApplicationTests {
 
     @Test
     fun contextLoads() {
+        // A test to validate that spring boot context was successfully loaded.
     }
-
 }

@@ -23,7 +23,7 @@ class MarvelCharacterClientIntegrationTest : AbstractIntegrationTest(), MarvelRe
 
     private val mockMarvelApi = MockWebServer()
 
-    private val objectMapper= ObjectMapper()
+    private val objectMapper = ObjectMapper()
         .registerModule(JavaTimeModule())
         .registerModule(Jdk8Module())
 

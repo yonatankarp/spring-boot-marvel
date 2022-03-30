@@ -45,4 +45,3 @@ data class MarvelResponse<T>(
     @JsonProperty("data")
     var data: ResponseWrapper<T>? = null,
 )
-

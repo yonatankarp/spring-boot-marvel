@@ -67,5 +67,4 @@ data class ResponseWrapper<T>(
             .append("count").append(count).append(", ")
             .append("results=").append(results?.joinToString(separator = ",", prefix = "{", postfix = "}"))
             .toString()
-
 }
