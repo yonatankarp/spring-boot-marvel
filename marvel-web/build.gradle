@@ -5,7 +5,8 @@ plugins {
     id("io.spring.dependency-management")
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.spring")
-    id("com.diffplug.spotless")
+    id("spring-boot-marvel.java-conventions")
+    id("spring-boot-marvel.code-metrics")
 }
 
 jar {
