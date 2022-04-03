@@ -15,13 +15,22 @@ These instructions will get you a copy of the project up and running on your
 local machine for development and testing purposes. See deployment for notes on
 how to deploy the project on a live system.
 
+This project contains multiple modules:
+
+- [marvel-client](./marvel-client/README.md) - responsible for the communication
+with Marvel's API.
+- [marvel-data](./marvel-data/README.md) - responsible for the persistence &
+management of the data served by the project.
+- [marvel-web](./marvel-web/README.md) - responsible to serve the web
+application of this project.
+
 ### Prerequisites
 
 To run the project you need to install the following:
 
 - JDK 17 or newer
+- Gradle 7.4.x or newer
 - Docker
-
 
 ### Building the application
 
