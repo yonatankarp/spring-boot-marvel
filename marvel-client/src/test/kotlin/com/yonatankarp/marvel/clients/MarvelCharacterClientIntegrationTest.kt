@@ -1,4 +1,4 @@
-package com.yonatankarp.marvel.services
+package com.yonatankarp.marvel.clients
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module
