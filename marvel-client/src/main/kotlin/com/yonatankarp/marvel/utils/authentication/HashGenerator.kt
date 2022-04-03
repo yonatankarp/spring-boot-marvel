@@ -1,16 +1,13 @@
 package com.yonatankarp.marvel.utils.authentication
 
-import org.springframework.beans.factory.annotation.Value
+import com.yonatankarp.marvel.config.ApiConfig
 import org.springframework.stereotype.Component
 import org.springframework.util.DigestUtils
 
 @Component
-class HashGenerator(
-    @Value("\${marvel.api.public_key}") val publicKey: String,
-    @Value("\${marvel.api.private_key}") private val privateKey: String
-) {
+class HashGenerator(val config: ApiConfig) {
     fun generate(ts: Long): String {
-        val password = ts.toString() + privateKey + publicKey
+        val password = ts.toString() + config.privateKey + config.publicKey
         return DigestUtils.md5DigestAsHex(password.toByteArray())
     }
 }

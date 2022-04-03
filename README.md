@@ -55,7 +55,7 @@ You can run this project directly from Gradle by executing the following
 command:
 
 ```shell
-./gradlew bootRun
+./gradlew marvel-web:bootRun 
 ```
 
 Otherwise, you can create docker image:
