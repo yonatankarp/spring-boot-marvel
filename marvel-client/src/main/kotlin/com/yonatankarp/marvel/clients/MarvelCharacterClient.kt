@@ -1,4 +1,4 @@
-package com.yonatankarp.marvel.services
+package com.yonatankarp.marvel.clients
 
 import com.yonatankarp.marvel.model.Character
 import com.yonatankarp.marvel.model.Comics

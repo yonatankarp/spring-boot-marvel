@@ -1,4 +1,4 @@
-package com.yonatankarp.marvel.services
+package com.yonatankarp.marvel.clients
 
 import java.io.File
 
