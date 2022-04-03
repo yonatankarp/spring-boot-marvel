@@ -1,22 +1,22 @@
 # marvel-client
 
-The `marvel-client` module is responsible for the communication between the
-project and the [Marvel API](https://developer.marvel.com/docs).
+The `marvel-client` module is responsible for the communication between the project and
+the [Marvel API](https://developer.marvel.com/docs).
 
-In order to communicate with Marvel's API you need your public and private keys
-exposed either by adding them to the `application.yml` file as follow:
+In order to communicate with Marvel's API you need your public and private keys exposed either by adding them to
+the `application.yml` file of `marvel-web` module as follow:
 
-```yml
-marvel:
-  api:
-    public_key: "MY_PUBLIC_KEY"
-    private_key: "MY_PRIVATE_KEY"
+```properties
+marvel.api.base_url="https://gateway.marvel.com"
+marvel.api.public_key="MY_PUBLIC_KEY"
+marvel.api.private_key="MY_PRIVATE_KEY"
 ```
 
 Or by exposing them over environment variables:
-```shell
-expose MARVEL_API_PUBLIC_KEY=MY_PUBLIC_KEY
-expose MARVEL_API_PRIVATE_KEY=MY_PRIVATE_KEY
+
+```bash
+export MARVEL_API_PUBLIC_KEY="MY_PUBLIC_KEY"
+export MARVEL_API_PRIVATE_KEY="MY_PRIVATE_KEY"
 ```
 
 Once both are set, you can use any of the available clients
@@ -25,16 +25,20 @@ Once both are set, you can use any of the available clients
 For example:
 
 ```kotlin
-val client = Retrofit.Builder()
-    .client(OkHttpClient())
-    .baseUrl("MARVEL_API_URL")
-    .addConverterFactory(JacksonConverterFactory.create(objectMapper))
-    .build()
-    .create(MarvelCharacterClient::class.java)
+@Service
+class MyService(
+    private val client: MarvelCharacterClient,
+    private val hashGenerator: HashGenerator
+) {
+    fun getCharacters() : Call<MarvelResponse<Character>> {
+        val timestamp = Instant.now().epochSecond
+        val hash = HashGenerator.generate(timestamp)
 
-val timestamp = Instant.now().epochSecond
-val hash = HashGenerator.generate(timestamp)
-
-val characters =
-    client.getCharacters(timestamp, HashGenerator.publicKey, hash)
+        return client.getCharacters(
+            timestamp,
+            HashGenerator.publicKey,
+            hash
+        )
+    }
+}
 ```

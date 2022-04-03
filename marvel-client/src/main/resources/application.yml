@@ -1,5 +1,0 @@
-marvel:
-  api:
-    url: "https://gateway.marvel.com"
-    publickey: "${marvel-public-key}:change-me"
-    privatekey: "${marvel-private-key}:change-me"
